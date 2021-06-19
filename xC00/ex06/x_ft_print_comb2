@@ -1,0 +1,132 @@
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+
+/* void	print_numbers(char esq, char dir)
+{
+	
+	ft_putchar(esq/10 + '0');		// write (1, "0", 1);
+	ft_putchar(esq%10 + '0');		//write (1, &esq, 1);
+	
+	write (1, " ", 1);
+
+	ft_putchar(dir/10 + '0');		//write (1, "0", 1);
+	ft_putchar(dir%10 + '0');		//write (1, &dir, 1);
+	
+	if (esq != 98)
+		write (1, ", ", 2);
+
+}
+*/
+
+void	ft_print_comb2(void)
+{
+	char	left;
+	char	right;
+
+	left = 0;
+	right = 1;
+
+	while (left <= 99)
+	{
+		while (right <= 99)
+		{
+			if (right > left)
+			{
+				//print_numbers(left, right);
+				ft_putchar(left/10 + '0');		// write (1, "0", 1);
+				ft_putchar(left%10 + '0');		//write (1, &esq, 1);
+
+				write (1, " ", 1);
+
+				ft_putchar(right/10 + '0');		//write (1, "0", 1);
+				ft_putchar(right%10 + '0');		//write (1, &dir, 1);
+		
+				if (left != 98)
+				write (1, ", ", 2);
+			}
+			right++;
+			
+		}
+		right = 1;		
+		left++;
+	}
+}
+
+
+/*void    ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+
+void    ft_print_comb2(void)
+{
+    char    left, right;
+
+        left = 0;
+        while (left <= 99)
+        {
+            right = 0;
+            while (right <= 99)
+            {
+                if (left < right)
+                {
+                    ft_putchar(left / 10 + '0');
+                    ft_putchar(left % 10 + '0');
+                    write(1, " ", 1);
+                    ft_putchar(right / 10 + '0');
+                    ft_putchar(right % 10 + '0');
+                    if (left != 98)
+                    {
+                        write(1, ", ", 2);
+                    }
+                }
+                right++;
+            }
+            left++;
+        }
+}*/
+
+/* void    ft_print_comb2(void)
+{
+    char    a;
+    char    b;
+    char    c;
+    char    d;
+
+    a = '0'; //48;
+    while (a <= '9')				//57)
+    {
+        b = '0'; 					//48;
+        while (b <= '9') 			//57)
+        {
+            c = '0'; 				//48;
+            while (c <= '9') 		//57)
+            {
+                d = '1';			//49;
+                while (d <= '9') 	//57)
+                {
+                    if (a + b != c + d && a + b < c + d)
+                    {
+                        write(1, &a, 1);
+                        write(1, &b, 1);
+                        write(1, " ", 1);
+                        write(1, &c, 1);
+                        write(1, &d, 1);
+                        if (a + b + c + d < 227)  //'9' + '8' + '9' + '9' ==  57 + 56 + 57 + 57 == 227)
+                        {
+                            write(1, ", ", 2);
+                        }
+                    }
+                    d++;
+                }
+                c++;
+            }
+            b++;
+        }
+        a++;
+    }
+} */
